@@ -116,7 +116,7 @@ class _NewTaskComponentState extends State<NewTaskComponent> {
                   controller.isEmpty.value = false;
                   TimeOfDay time = TimeOfDay.now();
                   TodoModal modal = TodoModal(
-                    id: 0,
+                    toid: 0,
                     title: titleController.text,
                     description: descriptionController.text,
                     date: controller.date.value,

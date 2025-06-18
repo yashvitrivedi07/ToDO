@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:to_do_application/controller/todo_controller.dart';
 import 'package:to_do_application/modal/todo_modal.dart';
 
+// ignore: must_be_immutable
 class EditScreen extends StatelessWidget {
   EditScreen({super.key});
 
@@ -210,7 +211,7 @@ class EditScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        controller.deleteTodo(data.id!);
+                        controller.deleteTodo(data.toid!);
                       },
                       child: Text(
                         "Delete Task",

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:to_do_application/getpage/pages.dart';
 import 'package:to_do_application/services/auth_service.dart';
 
+// ignore: must_be_immutable
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
 

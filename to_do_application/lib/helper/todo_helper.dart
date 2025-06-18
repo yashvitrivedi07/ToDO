@@ -10,7 +10,7 @@ class TodoHelper {
   Database? database;
 
   String tName = "todoTable";
-  String id = "id";
+  String toid = "id";
   String title = "title";
   String description = "description";
   String date = "date";
@@ -28,7 +28,7 @@ class TodoHelper {
       onCreate: (db, version) async {
         String q = '''
         CREATE TABLE $tName (
-          $id INTEGER PRIMARY KEY AUTOINCREMENT,
+          $toid INTEGER PRIMARY KEY AUTOINCREMENT,
           $title TEXT NOT NULL,
           $description TEXT NOT NULL,
           $date TEXT NOT NULL,
@@ -73,7 +73,7 @@ class TodoHelper {
     if (database == null) await initDatabase();
 
     String? q =
-        "UPDATE $tName SET $title = ?, $description = ?, $date = ?,$time = ?, $type = ? WHERE $id = ${modal.id}";
+        "UPDATE $tName SET $title = ?, $description = ?, $date = ?,$time = ?, $type = ? WHERE $toid = ${modal.toid}";
     List l = [
       modal.title,
       modal.description,
@@ -87,7 +87,7 @@ class TodoHelper {
 
   Future<int?> deleteTodos(int id) async {
     if (database == null) await initDatabase();
-    String q = "DELETE FROM $tName WHERE $id = $id";
+    String q = "DELETE FROM $tName WHERE $toid = $id";
     return await database?.rawDelete(q);
   }
 }

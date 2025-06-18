@@ -1,11 +1,11 @@
 
 class TodoModal {
-  int? id;
+  int? toid;
   String? title, description, date, time, type;
   int? priority;
 
   TodoModal(
-      {this.id,
+      {this.toid,
       this.title,
       this.description,
       this.date,
@@ -15,7 +15,7 @@ class TodoModal {
 
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      'id': toid,
       'title': title,
       'description': description,
       'date': date,
@@ -27,7 +27,7 @@ class TodoModal {
 
   factory TodoModal.fromMap(Map<String, dynamic> map) {
     return TodoModal(
-        id: map['id'],
+        toid: map['toid'],
         title: map['title'],
         description: map['description'],
         date: map['date'],
